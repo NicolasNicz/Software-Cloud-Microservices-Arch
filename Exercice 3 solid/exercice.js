@@ -1,15 +1,6 @@
 // 1. Single Responsibility Principle (SRP)
 
-class ArticleManager {
-    constructor() {
-    this.articles = [];
-    }
-}
-
 class ArticleCreator {
-    constructor(articles) {
-    this.articles = articles;
-    }
     createArticle(title, content) {
     const newArticle = { title, content };
     this.articles.push(newArticle);
@@ -42,6 +33,10 @@ class ArticleDeletor {
 }
 
 class ArticlePublisher {
+    constructor(articles) {
+        this.articles = articles;
+    }
+
     publishArticle(title) {
     console.log('Article published:', title);
     }
